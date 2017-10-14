@@ -1,0 +1,28 @@
+{
+  "name": "electron-ts",
+  "version": "1.0.0",
+  "description": "Electron TypeScript boilerplate",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc -p .",
+    "views": "cp -r src/views js/views/",
+    "compile": "npm run tsc; npm run views; cp package.json js/;",
+    "start": "npm run compile; electron js/app.js",
+    "clean": "rm -rf js/*",
+    "build": "npm run compile; electron-packager js electron-ts"
+  },
+  "keywords": [
+    "electron",
+    "typescript"
+  ],
+  "author": "edbrereton",
+  "license": "MIT",
+  "devDependencies": {
+    "electron-packager": "^9.1.0",
+    "typescript": "^2.5.3"
+  },
+  "dependencies": {
+    "electron": "^1.7.9"
+  }
+}
